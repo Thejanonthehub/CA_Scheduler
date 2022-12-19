@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="search" action="." method="post">
+    <label>Name of the Course:</label>
+<input type="text" name="name"></p>
+
+    <label>How many assessments are you going to conduct:</label><p>
+        <input type="radio" id="html" name="n_ca" value="5L">
+        <label for="less">Less than 5</label><br>
+        <input type="radio" id="css" name="n_ca" value="5eq">
+        <label for="equal">Exactly 5</label><br>
+        <input type="radio" id="javascript" name="n_ca" value="5G">
+        <label for="greater">Greater than 5</label><br>
+
+
+
+    <input type="date" name="due_date">
+    <label>Due date status (flexible or hard):</label><br>
+    <select name="due" id="due">
+        <option value="flexible">Flexible</option>
+        <option value="hard">Hard</option>
+      </select>
+    <p>
+    <input type="submit" name="submit">
+</form>
+</body>
+</html>
