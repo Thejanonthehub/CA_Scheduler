@@ -1,3 +1,4 @@
+#This file for visualising index.html file as a form and passing given output from that form(index.html) to back-end python code.
 from flask import Flask, render_template, request
 app=Flask(__name__)
 
@@ -7,11 +8,9 @@ def index():
 
 @app.route('/', methods=['POST'])
 def getvalues():
+    #passing front-end output data to variables
     name=request.form['name']
     n_ca=request.form['n_ca'] 
-    
-    #gender=request.form['Gender']
-    #email=request.form['Email']
     due_d=request.form['due_date']
     due=request.form['due']
     print(name,"\n",n_ca,"\n",due_d,"\n",due)
