@@ -1,0 +1,8 @@
+variable_name,value
+no_CA,5
+due,2
+sem_month,6
+start_date,1
+start_month,12
+start_year,2022
+max_CA,5
