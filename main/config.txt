@@ -1,5 +1,7 @@
 variable_name,value
-no_CA,5
+no_CA_t=5
+no_CA_l=3
+no_CA_p=1
 due,2
 sem_month,6
 start_date,1

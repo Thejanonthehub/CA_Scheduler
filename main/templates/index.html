@@ -7,9 +7,9 @@
 <body>
 <form name="search" action="." method="post">
     <label>Name of the Course:</label>
-<input type="text" name="name"></p>
+<input type="text" name="name"><br><br>
 
-    <label>How many assessments are you going to conduct:</label><p>
+    <label>How many assessments are you going to conduct:</label><br><br>
         <input type="radio" id="html" name="n_ca" value="5L">
         <label for="less">Less than 5</label><br>
         <input type="radio" id="css" name="n_ca" value="5eq">
@@ -20,12 +20,25 @@
 
 
     <input type="date" name="due_date">
-    <label>Due date status (flexible or hard):</label><br>
+    <label>Due date status (flexible or hard):</label><br><br>
     <select name="due" id="due">
         <option value="flexible">Flexible</option>
         <option value="hard">Hard</option>
-      </select>
-    <p>
+      </select><br><br>
+        <label>Select what assessments deadlines do want to keep as hard ones :</label><p>
+            <input type="checkbox" id="vehicle1" name="ca1" value="hard_1">
+            <label for="vehicle1"> CA 1</label><br>
+            <input type="checkbox" id="vehicle2" name="ca2" value="hard_2">
+            <label for="vehicle2"> CA 2</label><br>
+            <input type="checkbox" id="vehicle3" name="ca3" value="hard_3">
+            <label for="vehicle3"> CA 3</label><br>
+            <input type="checkbox" id="vehicle1" name="ca4" value="hard_4">
+            <label for="vehicle1"> CA 4</label><br>
+            <input type="checkbox" id="vehicle2" name="ca5" value="hard_5">
+            <label for="vehicle2"> CA 5</label><br>
+            <input type="checkbox" id="vehicle3" name="allca" value="hard_all">
+            <label for="vehicle3"> All </label>
+            <br><br>
     <input type="submit" name="submit">
 </form>
 </body>

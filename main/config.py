@@ -11,12 +11,3 @@ def con():
     return(dic_1)
 con()
 print(dic_1)
-
-
-        
-        
-
-        
-
-
-

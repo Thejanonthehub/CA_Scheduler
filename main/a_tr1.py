@@ -1,4 +1,7 @@
-#Read generated tables
+#fe_tr1 => Reserved for configuration table reading(provided and updated y the administration)
+
+
+#Read the table DAC_lec.csv and make a list
 list_2=[]
 def r_t():
     import pandas as pd
@@ -14,8 +17,7 @@ def r_t():
     #creating dictionary including lecturer code and the priority level
     tb_l=len(a)
     for x in range(1,tb_l):
-        list_2.append(a.iat[x,0])
-        
+        list_2.append(a.iat[x,0]) 
     return()
 r_t()
 print(list_2)
