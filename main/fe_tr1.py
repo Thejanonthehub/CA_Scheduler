@@ -70,14 +70,7 @@ return()'''
 
 
         #hard CAs
-
-
         # hard_d[df.iat[x,0]]=str(df.iat[x,7]).split(",")
-
-
     #print(x)
-    
-  
-    
     #print(len(df.axes[0]))
 #print(hard_d)

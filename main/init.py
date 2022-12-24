@@ -22,7 +22,7 @@ def i():
     global a
     global b
     a=np.array([vb_n])
-    b=np.array([value], dtype=int)
+    b=np.array([value], dtype=str)
 
     #print(a)
     
