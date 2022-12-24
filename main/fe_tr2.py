@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 from math import nan
+import 
 
 #import fe_tr1
 p_l2=['DE001','TR002','TR002','CU007']
@@ -10,7 +11,8 @@ df=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv
 #,encoding='ISO-8859–1'
 #print(df)
 array1=np.array(df)
-
+array2=array1[:,0]
+print(array2)
 
 #pd.DataFrame(array1).drop_duplicates().values
 #print(array1)
@@ -109,9 +111,9 @@ def eq():# this fuction is to calculate how many uequal dates are there
         c=0
     print(d_l,"\n")
     return()
-eq()
+'''eq()
 print(len(a_l2))
-print(len(a_l3))
+print(len(a_l3))'''
 
 #result,indices=np.unique(array1,return_index=True)
 

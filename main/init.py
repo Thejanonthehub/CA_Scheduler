@@ -29,5 +29,5 @@ def i():
     return(a,b)
 #print(i())
 i()
-print(b.dtype)
-print(vb_n)
+#print(b.dtype)
+#print(vb_n)
