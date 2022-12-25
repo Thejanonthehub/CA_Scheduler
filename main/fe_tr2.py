@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from math import nan
 import csv
+import config
 #
 p_l=['DE001','TR002','LL003','PS004','KF005','SA006','CU007','SP008','AJ009','IS010','SB011','TP012','RP013']
 
@@ -18,8 +19,21 @@ print(array2)
 #pd.DataFrame(array1).drop_duplicates().values
 #print(array1)
 #get no. of rows and columns of numpy array
-r,c=array1.shape
+r,co=array1.shape
 #print(r,c)
+
+#create dictionary to store dates based on ids
+copy_array3=array1[:,0:6]
+a_l4=copy_array3.tolist()
+d1={} # this dictionary consists of ID and dates 
+def cd():
+    global d1
+    for cl in a_l4:
+        d1[cl[0]]=str(cl[1:])
+    #print(d1)  
+    return()
+cd()
+
 n=0
 c=0
 de_l=[]
@@ -46,7 +60,7 @@ def se():
             if int(x[9:12])<pt:
                 pt=int(x[9:12])
                 lc=x
-        print(lc)
+        #print(lc)
     return(pt)
 
 #se()
@@ -120,30 +134,31 @@ print(len(a_l3))'''
 #print(result) 
 def cmp():
     import csv
+    rc=1
+    ro=array2.shape
     #get column names
     #frm=df.columns.values.tolist()
     
     #open a csv file 
-    with open("comed_dates.csv",mode="w") as csvfile:
+    with open("confirmed_dates.csv",mode="w") as csvfile:
         fieldnames=["ID","Confirmed_Dates"]
         writer=csv.DictWriter(csvfile,fieldnames=fieldnames)
         writer.writeheader()
-        for id in array2:
-            if 
-            writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
-    c=1
-    for i in range(r):
-        for j in range(c):
-            for x in array2:
-                if array1[i][j]==str(x):
-                    copy2_array1=array1[0,1:6]
-                    x=array1.tolist()
-
-                    '''if int(x[9:12])==1:
-
-                    else int(x[9:12]):
-                        print("r")'''
-    
+        for id in array2:# array2-lecturer id from csv
+            for co in config.a:# values from the priority list in config file
+                if id[:5]==co: #match the lecturer code with priority list
+                    if int(id[9:12])>=rc:#check the assessment number ...001
+                        rc+=1
+                        print("call ",id)
+                        '''for d in a_l3:
+                            if d=='''
+                else: 
+                    rc=1
+                #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
     return() 
 cmp()
 #print(frm)
+#print(a_l4)
+
+
+

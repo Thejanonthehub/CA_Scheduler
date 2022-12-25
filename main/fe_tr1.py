@@ -46,8 +46,8 @@ def fr():
 fr()
 df=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv',encoding='ISO-8859–1')
 array1=np.array(df)
-print(array1)
-#print(hard_d)
+#print(array1)
+print(hard_d)
 
 '''def compare():
     fr()
