@@ -92,15 +92,13 @@ def chk2(t):
 copy_array1=np.copy(array1) #make a copy from array1
 copy_array1=array1[:,1:6] #limit it to a particular data range
 copy2_array1=array1[:,0:6]
-a_l5=copy2_array1.tolist()
+a_l5=copy2_array1.tolist()#******************************************
 a_l=copy_array1.tolist() # convert to a list
 a_l3=[]
 a_l2=[]
-a_l6=[]
 def uqe(): #this list for creating unnique date list from the test_data file
     global a_l2
     global a_l3
-    global a_l6
     #get it to a plain list (not clusters inside)
     for q in a_l:
         for e in q:
@@ -148,11 +146,12 @@ def prior2(vl1):
 
 #print(result) 
 def cmp():
+    import test_r
     import config
     import csv
     rc=1
     d_l2={}
-    a_l5=[]
+    a_l6=[]
     ro=array2.shape
     #get column names
     #frm=df.columns.values.tolist()
@@ -170,14 +169,20 @@ def cmp():
                         print("call ",id)
                         
                         for d in a_l3: #dates from unique date list a_l3
-                            for d1 in a_l2:
-                                if a_l2==a_l3:
-                                    
+                            a=d1[id]
+                            a_l6=test_r.stol(d1,id) #passing object to function 'stol'
+                            #print(a_l6)
+                            for lv in a_l6: # lecturers input dates from a_l2
+                                if lv=="nan":# removing 'nan'
+                                    break
+                                if lv==d: #chek whether di equals to d
+                                    print('check',lv)
+
 
                                     
                 #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
     return() 
-#cmp()
+cmp()
 
 
 
@@ -185,8 +190,8 @@ def cmp():
 #print(a_l4)
 #print(a_l3)
 #print(array2)
-#print(d1)
-#print(a_l5[0][1:])
+#print(d1['DE001ETEC001'])
+#print(array1)
 
 '''for um in range(len(a_l5)):
     if a_l5[um][0]=='DE001ETEC001':
