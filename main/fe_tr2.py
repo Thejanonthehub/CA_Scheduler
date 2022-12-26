@@ -102,6 +102,8 @@ def uqe(): #this list for creating unnique date list from the test_data file
     #get it to a plain list (not clusters inside)
     for q in a_l:
         for e in q:
+            if str(e)=="nan":
+                break
             a_l2.append(e)
 
     # insert equal items to the list a_l3
@@ -176,7 +178,9 @@ def cmp():
                                 if lv=="nan":# removing 'nan'
                                     break
                                 if lv==d: #chek whether di equals to d
-                                    print('check',lv)
+                                    if int(d_l[lv])<=int(config.due):
+                                        print('Date booked ',lv)
+                                        
 
 
                                     
@@ -187,11 +191,12 @@ cmp()
 
 
 #print(frm)
-#print(a_l4)
+print(a_l2)
 #print(a_l3)
 #print(array2)
-#print(d1['DE001ETEC001'])
+#print(d1) ****
 #print(array1)
+#print(d_l) ****
 
 '''for um in range(len(a_l5)):
     if a_l5[um][0]=='DE001ETEC001':

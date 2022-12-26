@@ -13,7 +13,7 @@ con()
 no_CA_t=dic_1['no_CA_t']
 no_CA_l=dic_1['no_CA_l']
 no_CA_p=dic_1['no_CA_t']
-due=dic_1['no_CA_t']
+due=dic_1['due']
 sem_month=dic_1['no_CA_t']
 start_date=dic_1['no_CA_t']
 start_month=dic_1['no_CA_t']
