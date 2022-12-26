@@ -91,14 +91,17 @@ def chk2(t):
 #chk1()
 copy_array1=np.copy(array1) #make a copy from array1
 copy_array1=array1[:,1:6] #limit it to a particular data range
+copy2_array1=array1[:,0:6]
+a_l5=copy2_array1.tolist()
 a_l=copy_array1.tolist() # convert to a list
 a_l3=[]
 a_l2=[]
+a_l6=[]
 def uqe(): #this list for creating unnique date list from the test_data file
     global a_l2
     global a_l3
-
-    #get it to a plain list (not cluters inside)
+    global a_l6
+    #get it to a plain list (not clusters inside)
     for q in a_l:
         for e in q:
             a_l2.append(e)
@@ -111,12 +114,14 @@ def uqe(): #this list for creating unnique date list from the test_data file
             a_l3.append(i)
         '''else:
             print(i,'\n')'''
+
     return(a_l3)
 uqe()
 
+d_l={}
 def eq():# this fuction is to calculate how many uequal dates are there
     c=0
-    d_l={}
+    global d_l
     for i in a_l3:
         for j in a_l2:
             if i==j:
@@ -125,16 +130,29 @@ def eq():# this fuction is to calculate how many uequal dates are there
         c=0
     #print(d_l,"\n")
     return()
-#eq()
+eq()
 '''print(len(a_l2))
 print(len(a_l3))'''
 #print(array1)
 #result,indices=np.unique(array1,return_index=True)
 
+def prior2(vl1):
+    import config
+    for x in a_l3:
+        if int(d_l[x])>int(config.due):
+            print('should check for priority')
+        else:
+            print("date booked for ",vl1)
+    return()
+
+
 #print(result) 
 def cmp():
+    import config
     import csv
     rc=1
+    d_l2={}
+    a_l5=[]
     ro=array2.shape
     #get column names
     #frm=df.columns.values.tolist()
@@ -144,21 +162,34 @@ def cmp():
         fieldnames=["ID","Confirmed_Dates"]
         writer=csv.DictWriter(csvfile,fieldnames=fieldnames)
         writer.writeheader()
-        for id in array2:# array2-lecturer id from csv
-            for co in config.a:# values from the priority list in config file
+        for co in config.a:# values from the priority list in config file
+            for id in array2:# array2-lecturer id from csv
                 if id[:5]==co: #match the lecturer code with priority list
                     if int(id[9:12])>=rc:#check the assessment number ...001
-                        rc+=1
+                        rc=int(id[9:12])
                         print("call ",id)
-                        '''for d in a_l3:
-                            if d=='''
-                else: 
-                    rc=1
+                        
+                        for d in a_l3: #dates from unique date list a_l3
+                            for d1 in a_l2:
+                                if a_l2==a_l3:
+                                    
+
+                                    
                 #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
     return() 
-cmp()
+#cmp()
+
+
+
 #print(frm)
 #print(a_l4)
+#print(a_l3)
+#print(array2)
+#print(d1)
+#print(a_l5[0][1:])
 
+'''for um in range(len(a_l5)):
+    if a_l5[um][0]=='DE001ETEC001':
+        print(a_l5[um][1:])'''
 
 
