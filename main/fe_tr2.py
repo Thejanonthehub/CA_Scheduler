@@ -4,6 +4,7 @@ import numpy as np
 from math import nan
 import csv
 import config
+
 #
 p_l=['DE001','TR002','LL003','PS004','KF005','SA006','CU007','SP008','AJ009','IS010','SB011','TP012','RP013']
 
@@ -151,7 +152,7 @@ def cmp():
     import test_r
     import config
     import csv
-    rc=1
+    #rc=1
     d_l2={}
     a_l6=[]
     ro=array2.shape
@@ -166,20 +167,20 @@ def cmp():
         for co in config.a:# values from the priority list in config file
             for id in array2:# array2-lecturer id from csv
                 if id[:5]==co: #match the lecturer code with priority list
-                    if int(id[9:12])>=rc:#check the assessment number ...001
-                        rc=int(id[9:12])
-                        print("call ",id)
+                    '''if int(id[9:12])>=rc: check the assessment number ...001
+                        rc=int(id[9:12])'''
+                    print("call ",id)
                         
-                        for d in a_l3: #dates from unique date list a_l3
-                            a=d1[id]
-                            a_l6=test_r.stol(d1,id) #passing object to function 'stol'
-                            #print(a_l6)
-                            for lv in a_l6: # lecturers input dates from a_l2
-                                if lv=="nan":# removing 'nan'
-                                    break
-                                if lv==d: #chek whether di equals to d
-                                    if int(d_l[lv])<=int(config.due):
-                                        print('Date booked ',lv)
+                    for d in a_l3: #dates from unique date list a_l3
+                        a=d1[id]
+                        a_l6=test_r.stol(d1,id) #passing object to function 'stol'
+                        #print(a_l6)
+                        for lv in a_l6: # lecturers input dates from a_l2
+                            if lv=="nan":# removing 'nan'
+                                break
+                            if lv==d: #chek whether di equals to d
+                                if int(d_l[lv])<=int(config.due):
+                                    print('Date booked ',lv)
                                         
 
 
@@ -191,12 +192,12 @@ cmp()
 
 
 #print(frm)
-print(a_l2)
+#print(a_l2)
 #print(a_l3)
 #print(array2)
-#print(d1) ****
+#print(d1)
 #print(array1)
-#print(d_l) ****
+print(d_l) 
 
 '''for um in range(len(a_l5)):
     if a_l5[um][0]=='DE001ETEC001':
