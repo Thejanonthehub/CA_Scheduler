@@ -21,6 +21,7 @@ print(array2)
 #print(array1)
 #get no. of rows and columns of numpy array
 r,co=array1.shape
+n_co=co-2 #without hard and flexible columns
 #print(r,c)
 
 #create dictionary to store dates based on ids
@@ -152,6 +153,7 @@ def cmp():
     import test_r
     import config
     import csv
+    d_lc=d_l.copy()
     #rc=1
     d_l2={}
     a_l6=[]
@@ -180,7 +182,17 @@ def cmp():
                                 break
                             if lv==d: #chek whether di equals to d
                                 if int(d_l[lv])<=int(config.due):
-                                    print('Date booked ',lv)
+                                    print(lv, ' Date booked by ',id)
+                                    #writer.writerow('Id':'j')
+                                else:
+                                    aa=int(d_lc[lv])
+                                    if aa==0:
+                                        break
+                                    else:
+                                
+                                        print(lv,' ',aa,'st booked by ', id)
+                                        d_lc[lv]=int(aa-1)
+
                                         
 
 
@@ -197,7 +209,7 @@ cmp()
 #print(array2)
 #print(d1)
 #print(array1)
-print(d_l) 
+#print(df)
 
 '''for um in range(len(a_l5)):
     if a_l5[um][0]=='DE001ETEC001':
