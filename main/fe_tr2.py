@@ -4,6 +4,8 @@ import numpy as np
 from math import nan
 import csv
 import config
+import date_booking
+import constants
 
 #
 p_l=['DE001','TR002','LL003','PS004','KF005','SA006','CU007','SP008','AJ009','IS010','SB011','TP012','RP013']
@@ -162,36 +164,34 @@ def cmp():
     #frm=df.columns.values.tolist()
     
     #open a csv file 
-    with open("confirmed_dates.csv",mode="w") as csvfile:
-        fieldnames=["ID","Confirmed_Dates"]
-        writer=csv.DictWriter(csvfile,fieldnames=fieldnames)
-        writer.writeheader()
-        for co in config.a:# values from the priority list in config file
-            for id in array2:# array2-lecturer id from csv
-                if id[:5]==co: #match the lecturer code with priority list
-                    '''if int(id[9:12])>=rc: check the assessment number ...001
-                        rc=int(id[9:12])'''
-                    print("call ",id)
+    for co in config.a:# values from the priority list in config file
+        for id in array2:# array2-lecturer id from csv
+            if id[:5]==co: #match the lecturer code with priority list
+                '''if int(id[9:12])>=rc: check the assessment number ...001
+                    rc=int(id[9:12])'''
+                print("call ",id)
                         
-                    for d in a_l3: #dates from unique date list a_l3
-                        a=d1[id]
-                        a_l6=test_r.stol(d1,id) #passing object to function 'stol'
-                        #print(a_l6)
-                        for lv in a_l6: # lecturers input dates from a_l2
-                            if lv=="nan":# removing 'nan'
-                                break
-                            if lv==d: #chek whether di equals to d
-                                if int(d_l[lv])<=int(config.due):
-                                    print(lv, ' Date booked by ',id)
-                                    #writer.writerow('Id':'j')
+                for d in a_l3: #dates from unique date list a_l3
+                    a=d1[id]
+                    a_l6=test_r.stol(d1,id) #passing object to function 'stol'
+                    #print(a_l6)
+                    for lv in a_l6: # lecturers input dates from a_l2
+                        if lv=="nan":# removing 'nan'
+                            break
+                        if lv==d: #chek whether di equals to d
+                            if int(d_l[lv])<int(config.due):
+                                print(lv, ' Date booked by ',id)
+                                #writer.writerow('Id':'j')
+                            else:
+                                aa=int(d_lc[lv])
+                                if aa==0:
+                                    print(lv,' date is already booked')
+                                    
+                                    
                                 else:
-                                    aa=int(d_lc[lv])
-                                    if aa==0:
-                                        break
-                                    else:
-                                
-                                        print(lv,' ',aa,'st booked by ', id)
-                                        d_lc[lv]=int(aa-1)
+                                    print(lv,' booked by ', id)
+                                    d_lc[lv]=d_lc[lv]-1
+                                    print(d_lc)
 
                                         
 
@@ -209,7 +209,7 @@ cmp()
 #print(array2)
 #print(d1)
 #print(array1)
-#print(df)
+#print(d_l)
 
 '''for um in range(len(a_l5)):
     if a_l5[um][0]=='DE001ETEC001':
