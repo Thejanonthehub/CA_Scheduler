@@ -4,6 +4,7 @@ import numpy as np
 from math import nan
 import csv
 import config
+from date_booking import da_chk
 import constants
 
 #
@@ -48,7 +49,50 @@ for j in range(r):
 
     for i in range(c):
         print('pass')
+#print(de_l)
 
+
+def se():
+    pt=0
+    lc=''
+    for x in de_l:
+        if int(x[11])==1:
+            pt==int(x[9:12])
+            lc=x
+            continue
+        else:
+            if int(x[9:12])<pt:
+                pt=int(x[9:12])
+                lc=x
+        #print(lc)
+    return(pt)
+
+#se()
+#print(array1)
+#lecture code recognition
+def chk1():
+    for i in range(r):
+        for j in range(1,6):
+            l=array1[i][j]
+            chk2(l)
+    return()
+
+def chk2(t):
+    c=1
+    #for i in array1:
+    copy_array1=np.copy(array1)
+    copy_array1=array1[:,0:6] 
+    #r2,c2=copy_array1.shape
+    for x in copy_array1:
+        if x==t:
+            c+=1
+                    #copy_array1=np.delete(copy_array1,np.where(copy_array1==copy_array1[i][j]))
+
+    print('we have '+ str(t)+ 'as this many '+ str(c))
+    #print(copy_array1)
+    return()
+#chk2('2023-01-10')
+#chk1()
 copy_array1=np.copy(array1) #make a copy from array1
 copy_array1=array1[:,1:6] #limit it to a particular data range
 copy2_array1=array1[:,0:6]
@@ -108,7 +152,6 @@ def prior2(vl1):
 
 #print(result) 
 def cmp():
-    import date_booking
     import test_r
     import config
     import csv
@@ -120,7 +163,7 @@ def cmp():
     ro=array2.shape
     #get column names
     #frm=df.columns.values.tolist()
-    a_l8=[]
+    '''a_l8=[]
     d_l3={}
     a_l7 = [item for item in a_l2 if 
     a_l2.count(item) > int(config.due)]
@@ -134,7 +177,7 @@ def cmp():
                 cv+=1
             d_l3[rt]=cv
             cv=0
-    d_l4 = {key: 0 for key in d_l3}
+    d_l4 = {key: 0 for key in d_l3}'''
     
 
 
@@ -157,8 +200,8 @@ def cmp():
                             break
                         if lv==d: #chek whether di equals to d
                             cnt=int(d_l[lv])
-                            #date_booking.da_chk(d_l,lv,id)
-                            if d_l[lv]<=int(config.due):
+                            date_booking.da_chk(d_l,lv)
+                            '''if int(d_l[lv])<=int(config.due):
                                 print(lv, ' Date booked by ',id)
                                 #writer.writerow('Id':'j')
                             else:
@@ -166,12 +209,21 @@ def cmp():
                                     for it2 in a_l8:
                                         if lv==it2:
                                             d_l4[lv]+=1
-                                            print('date ',lv,' is booked by 2nd loop')
+                                        print('date ',lv,' is booked by 2nd loop')
                                 else:
-                                    print('date is already booked')
-                                                             
+                                    print('date is already booked')'''
+                                        
+                                        
+
+                                       
+                            
+                                    #print(d_lc)
+
+                                        
+
+
+    print(d_l4)                         
       #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
-    print(a_l8)
     return() 
 cmp()
 
@@ -183,7 +235,7 @@ cmp()
 #print(array2)
 #print(d1)
 #print(array1)
-#print()
+#print(d_l)
 
 '''for um in range(len(a_l5)):
     if a_l5[um][0]=='DE001ETEC001':
