@@ -52,7 +52,7 @@ for j in range(r):
 copy_array1=np.copy(array1) #make a copy from array1
 copy_array1=array1[:,1:6] #limit it to a particular data range
 copy2_array1=array1[:,0:6]
-a_l5=copy2_array1.tolist()#******************************************
+a_l5=copy2_array1.tolist()
 a_l=copy_array1.tolist() # convert to a list
 a_l3=[]
 a_l2=[]
@@ -93,8 +93,6 @@ def eq():# this fuction is to calculate how many uequal dates are there
 eq()
 '''print(len(a_l2))
 print(len(a_l3))'''
-#print(array1)
-#result,indices=np.unique(array1,return_index=True)
 
 def prior2(vl1):
     import config
@@ -104,89 +102,3 @@ def prior2(vl1):
         else:
             print("date booked for ",vl1)
     return()
-
-
-#print(result) 
-def cmp():
-    import date_booking
-    import test_r
-    import config
-    import csv
-    #d_lc=d_l.copy()
-    d_lc2 = {key: 0 for key in d_l}
-    #rc=1
-    a_l6=[]
-    l_t=[]
-    ro=array2.shape
-    #get column names
-    #frm=df.columns.values.tolist()
-    a_l8=[]
-    d_l3={}
-    a_l7 = [item for item in a_l2 if 
-    a_l2.count(item) > int(config.due)]
-    for it1 in a_l7:
-        if it1 not in a_l8:
-            a_l8.append(it1)
-    cv=0
-    for rt in a_l8:
-        for rq in a_l7:
-            if a_l7==a_l8:
-                cv+=1
-            d_l3[rt]=cv
-            cv=0
-    d_l4 = {key: 0 for key in d_l3}
-    
-
-
-
-    
-    #open a csv file 
-    for co in config.a:# values from the priority list in config file
-        for id in array2:# array2-lecturer id from csv
-            if id[:5]==co: #match the lecturer code with priority list
-                '''if int(id[9:12])>=rc: check the assessment number ...001
-                    rc=int(id[9:12])'''
-                print("call ",id)
-                        
-                for d in a_l3: #dates from unique date list a_l3
-                    
-                    a_l6=test_r.stol(d1,id) #passing object to function 'stol'
-                    #print(a_l6)
-                    for lv in a_l6: # lecturers input dates from a_l2
-                        if lv=="nan":# removing 'nan'
-                            break
-                        if lv==d: #chek whether di equals to d
-                            cnt=int(d_l[lv])
-                            #date_booking.da_chk(d_l,lv,id)
-                            if d_l[lv]<=int(config.due):
-                                print(lv, ' Date booked by ',id)
-                                #writer.writerow('Id':'j')
-                            else:
-                                if d_l4[lv]<int(config.due):
-                                    for it2 in a_l8:
-                                        if lv==it2:
-                                            d_l4[lv]+=1
-                                            print('date ',lv,' is booked by 2nd loop')
-                                else:
-                                    print('date is already booked')
-                                                             
-      #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
-    print(a_l8)
-    return() 
-cmp()
-
-
-
-#print(frm)
-#print(a_l2)
-#print(a_l3)
-#print(array2)
-#print(d1)
-#print(array1)
-#print()
-
-'''for um in range(len(a_l5)):
-    if a_l5[um][0]=='DE001ETEC001':
-        print(a_l5[um][1:])'''
-
-

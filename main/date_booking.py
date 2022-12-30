@@ -1,6 +1,18 @@
-def da_chk(d_l,lv,id):
-    import config
+#this programme for priority checking and the booking data based on that
+def dt_chk():
     import fe_tr2
+    import test_r
+    import config
+    import csv
+    import csv
+    #d_lc=d_l.copy()
+    d_lc2 = {key: 0 for key in fe_tr2.d_l}
+    #rc=1
+    a_l6=[] 
+    l_t=[]
+    ro=fe_tr2.array2.shape
+    #get column names
+    #frm=df.columns.values.tolist()
     a_l8=[]
     d_l3={}
     a_l7 = [item for item in fe_tr2.a_l2 if 
@@ -16,18 +28,38 @@ def da_chk(d_l,lv,id):
             d_l3[rt]=cv
             cv=0
     d_l4 = {key: 0 for key in d_l3}
-    
-    if int(d_l[lv])<=int(config.due):
-        print(lv, ' Date booked by ',id)
-        
-    else:
-        if d_l4[lv]<int(config.due):
-            for it2 in a_l8:
-                if lv==it2:
-                    d_l4[lv]+=1
-                    print('date ',lv,' is booked by 2nd loop')
-        else:
-            print('date is already booked')
-    return()
-    
-#da_chk(fe_tr2.d_l,'2021-01-10')
+     
+    for co in config.a:# values from the priority list in config file
+        for id in fe_tr2.array2:# array2-lecturer id from csv
+            if id[:5]==co: #match the lecturer code with priority list
+                '''if int(id[9:12])>=rc: check the assessment number ...001
+                    rc=int(id[9:12])'''
+                print("call ",id)
+                        
+                for d in fe_tr2.a_l3: #dates from unique date list a_l3
+                    
+                    a_l6=test_r.stol(fe_tr2.d1,id) #passing object to function 'stol'
+                    #print(a_l6)
+                    for lv in a_l6: # lecturers input dates from a_l2
+                        if lv=="nan":# removing 'nan'
+                            break
+                        if lv==d: #chek whether di equals to d
+                            cnt=int(fe_tr2.d_l[lv])
+                            if int(fe_tr2.d_l[lv])<=int(config.due):
+                                print(lv, ' Date booked')
+
+                                #writer.writerow('Id':'j')
+                            else:
+                                if d_l4[lv]<int(config.due):
+                                    for it2 in a_l8:
+                                        if lv==it2:
+                                            d_l4[lv]+=1
+                                        print('date ',lv,' is booked by 2nd loop')
+                                else:
+                                    print(lv,'date is already booked')
+
+                                        
+    print(d_l4)                         
+      #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
+    return() 
+dt_chk()

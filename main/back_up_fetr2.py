@@ -4,7 +4,6 @@ import numpy as np
 from math import nan
 import csv
 import config
-from date_booking import da_chk
 import constants
 
 #
@@ -163,7 +162,7 @@ def cmp():
     ro=array2.shape
     #get column names
     #frm=df.columns.values.tolist()
-    '''a_l8=[]
+    a_l8=[]
     d_l3={}
     a_l7 = [item for item in a_l2 if 
     a_l2.count(item) > int(config.due)]
@@ -177,7 +176,7 @@ def cmp():
                 cv+=1
             d_l3[rt]=cv
             cv=0
-    d_l4 = {key: 0 for key in d_l3}'''
+    d_l4 = {key: 0 for key in d_l3}
     
 
 
@@ -200,8 +199,7 @@ def cmp():
                             break
                         if lv==d: #chek whether di equals to d
                             cnt=int(d_l[lv])
-                            date_booking.da_chk(d_l,lv)
-                            '''if int(d_l[lv])<=int(config.due):
+                            if int(d_l[lv])<=int(config.due):
                                 print(lv, ' Date booked by ',id)
                                 #writer.writerow('Id':'j')
                             else:
@@ -211,7 +209,7 @@ def cmp():
                                             d_l4[lv]+=1
                                         print('date ',lv,' is booked by 2nd loop')
                                 else:
-                                    print('date is already booked')'''
+                                    print('date is already booked')
                                         
                                         
 
