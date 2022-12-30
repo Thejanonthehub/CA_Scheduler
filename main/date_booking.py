@@ -7,6 +7,7 @@ def dt_chk():
     import csv
     #d_lc=d_l.copy()
     d_lc2 = {key: 0 for key in fe_tr2.d_l}
+    csv={}
     #rc=1
     a_l6=[] 
     l_t=[]
@@ -35,9 +36,8 @@ def dt_chk():
                 '''if int(id[9:12])>=rc: check the assessment number ...001
                     rc=int(id[9:12])'''
                 print("call ",id)
-                        
+
                 for d in fe_tr2.a_l3: #dates from unique date list a_l3
-                    
                     a_l6=test_r.stol(fe_tr2.d1,id) #passing object to function 'stol'
                     #print(a_l6)
                     for lv in a_l6: # lecturers input dates from a_l2
@@ -47,14 +47,14 @@ def dt_chk():
                             cnt=int(fe_tr2.d_l[lv])
                             if int(fe_tr2.d_l[lv])<=int(config.due):
                                 print(lv, ' Date booked')
-
+                                
                                 #writer.writerow('Id':'j')
                             else:
                                 if d_l4[lv]<int(config.due):
                                     for it2 in a_l8:
                                         if lv==it2:
                                             d_l4[lv]+=1
-                                        print('date ',lv,' is booked by 2nd loop')
+                                    print('date ',lv,' is booked by 2nd loop')
                                 else:
                                     print(lv,'date is already booked')
 
