@@ -5,18 +5,24 @@ from math import nan
 import csv
 import config
 import constants
+import cr_dc
 
 #
 p_l=['DE001','TR002','LL003','PS004','KF005','SA006','CU007','SP008','AJ009','IS010','SB011','TP012','RP013']
 
 #import fe_tr1
 #Convert 'test_data.csv' file into a numpy array
-df=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv')
+dfi=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv')
 #,encoding='ISO-8859–1'
 #print(df)
+cr_dc.order_a(dfi)
+df=pd.read_csv('new_data.csv')
+#array0=cr_dc.order_a(df)
 array1=np.array(df)
-array2=array1[:,0] #sub array- Lecturers Id
-#print(array2)
+array2=cr_dc.md(array1) #pass array1 to function 'md' in 'cr_dc' file to list lecturer id according
+#print(type(array2))
+#array2=array1[:,0] #sub array- Lecturers Id
+#print(array2[0])
 
 #pd.DataFrame(array1).drop_duplicates().values
 #print(array1)

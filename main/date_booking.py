@@ -3,15 +3,7 @@ def dt_chk():
     import fe_tr2
     import test_r
     import config
-    import csv
-    #d_lc=d_l.copy()
-    d_lc2 = {key: 0 for key in fe_tr2.d_l}
-    d_cv={} #newly opened
     a_l6=[] 
-    l_t=[]
-    ro=fe_tr2.array2.shape
-    #get column names
-    #frm=df.columns.values.tolist()
     a_l8=[]
     d_l3={}
     a_l7 = [item for item in fe_tr2.a_l2 if 
@@ -28,14 +20,9 @@ def dt_chk():
             cv=0
     d_l4 = {key: 0 for key in d_l3}
      
-    for co in config.a:# values from the priority list in config file
-        for id in fe_tr2.array2:# array2-lecturer id from csv
-            if id[:5]==co: #match the lecturer code with priority list
-                '''if int(id[9:12])>=rc: check the assessment number ...001
-                    rc=int(id[9:12])'''
-                print("call ",id)
-
-                for d in fe_tr2.a_l3: #dates from unique date list a_l3
+    for id in fe_tr2.array2:# array2-lecturer id from csv
+        print("call ",id)
+        for d in fe_tr2.a_l3: #dates from unique date list a_l3
                     a_l6=test_r.stol(fe_tr2.d1,id) #passing object to function 'stol'
                     #print(a_l6)
                     for lv in a_l6: # lecturers input dates from a_l2

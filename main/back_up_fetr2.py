@@ -16,7 +16,7 @@ df=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv
 #print(df)
 array1=np.array(df)
 array2=array1[:,0] #sub array- Lecturers Id
-print(array2)
+print(type(array2))
 
 #pd.DataFrame(array1).drop_duplicates().values
 #print(array1)
@@ -230,8 +230,8 @@ cmp()
 #print(frm)
 #print(a_l2)
 #print(a_l3)
-print(array2)
-#print(d1)
+#print(array2)
+print(d1)
 #print(array1)
 #print(d_l)
 
