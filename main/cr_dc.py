@@ -8,8 +8,6 @@ def md(array1):
         md_l1.append(y)
     return(md_l1)
 #a=md()
-#print(a)
-
 
 #reform original csv out from the mysql according to the priority level based manner
 def order_a(df):
@@ -34,11 +32,7 @@ def order_a(df):
     # Loop through the rows of the DataFrame
         for x in config.a:
             for index, row in df.iterrows():
-    # Print the index and data for each row
+    # index and data for each row
                 l1=row["ID"]
                 if l1[:5]==x:
                     writer.writerow(row)        
-    #print(type(arr))
-
-
-    #make all the keys of a dictionary zero
