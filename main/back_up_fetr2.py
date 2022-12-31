@@ -16,7 +16,6 @@ df=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv
 #print(df)
 array1=np.array(df)
 array2=array1[:,0] #sub array- Lecturers Id
-print(type(array2))
 
 #pd.DataFrame(array1).drop_duplicates().values
 #print(array1)
@@ -207,7 +206,7 @@ def cmp():
                                     for it2 in a_l8:
                                         if lv==it2:
                                             d_l4[lv]+=1
-                                        print('date ',lv,' is booked by 2nd loop')
+                                    print('date ',lv,' is booked by 2nd loop')
                                 else:
                                     print('date is already booked')
                                         
@@ -220,7 +219,7 @@ def cmp():
                                         
 
 
-    print(d_l4)                         
+                             
       #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
     return() 
 cmp()
@@ -231,9 +230,11 @@ cmp()
 #print(a_l2)
 #print(a_l3)
 #print(array2)
-print(d1)
-#print(array1)
+#print(d1)
+#print(array2)
 #print(d_l)
+#print(array2)
+
 
 '''for um in range(len(a_l5)):
     if a_l5[um][0]=='DE001ETEC001':

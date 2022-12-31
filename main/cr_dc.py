@@ -4,23 +4,26 @@ def md(array1):
     import fe_tr2
     import config
     import numpy as np
-    array2=array1[:,0]
-    for x in config.a:
-        for y in array2:
-            
-            if y[:5]==x:
-                md_l1.append(y)
+    for y in array1:
+        md_l1.append(y)
     return(md_l1)
 #a=md()
 #print(a)
 
+
+#reform original csv out from the mysql according to the priority level based manner
 def order_a(df):
     #dc=[]
     import config
     import pandas as pd
     import numpy as np
     import csv
-    #arr = np.array([])
+    import os
+
+    # Delete existing csv file called 'new_data.csv' if there any
+    main='/Users/thejanhasaranga/CA_Scheduler/main'
+    """if 'new_data.csv' in main:
+        os.remove('new_data.csv')"""
 
     # Write the column names to a new CSV file
     with open('new_data.csv', 'w', newline='') as f:
@@ -34,8 +37,8 @@ def order_a(df):
     # Print the index and data for each row
                 l1=row["ID"]
                 if l1[:5]==x:
-                #row_data = np.array(row)
-                #arr = np.append(arr, row_data)
-                    writer.writerow(row)
-    
+                    writer.writerow(row)        
     #print(type(arr))
+
+
+    #make all the keys of a dictionary zero
