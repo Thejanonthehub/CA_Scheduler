@@ -4,11 +4,9 @@ def dt_chk():
     import test_r
     import config
     import csv
-    import csv
     #d_lc=d_l.copy()
     d_lc2 = {key: 0 for key in fe_tr2.d_l}
-    csv={}
-    #rc=1
+    d_cv={} #newly opened
     a_l6=[] 
     l_t=[]
     ro=fe_tr2.array2.shape
@@ -59,7 +57,7 @@ def dt_chk():
                                     print(lv,'date is already booked')
 
                                         
-    print(d_l4)                         
+    #print(d_l4)                         
       #writer.writerow({"ID":"b","Confirmed_Dates":"2023-01-02"})
     return() 
 dt_chk()

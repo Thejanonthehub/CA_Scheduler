@@ -16,7 +16,7 @@ df=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv
 #print(df)
 array1=np.array(df)
 array2=array1[:,0] #sub array- Lecturers Id
-print(array2)
+#print(array2)
 
 #pd.DataFrame(array1).drop_duplicates().values
 #print(array1)
@@ -93,12 +93,3 @@ def eq():# this fuction is to calculate how many uequal dates are there
 eq()
 '''print(len(a_l2))
 print(len(a_l3))'''
-
-def prior2(vl1):
-    import config
-    for x in a_l3:
-        if int(d_l[x])>int(config.due):
-            print('should check for priority')
-        else:
-            print("date booked for ",vl1)
-    return()

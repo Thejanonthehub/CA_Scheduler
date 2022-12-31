@@ -1,7 +1,9 @@
+#this file is to suggest alternatve dates for lecturers those who didn't get their prefered dates
 import calendar
 from datetime import datetime, timedelta
 
 # Specify the year and month
+
 year = 2022
 month = 12 
 
