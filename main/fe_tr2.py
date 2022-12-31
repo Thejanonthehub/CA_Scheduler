@@ -1,10 +1,11 @@
 #front-end table reading programme two...
 import pandas as pd
 import numpy as np
+import config
 from math import nan
 import cr_dc
 
-df0=pd.read_csv('/Users/thejanhasaranga/CA_Scheduler/main/csv_files/test_data.csv')
+df0=pd.read_csv(config.fl1)
 #,encoding='ISO-8859–1'
 
 cr_dc.order_a(df0)

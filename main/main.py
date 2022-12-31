@@ -1,4 +1,4 @@
-#main execution file
+#main executing file
 import fe_tr2
 import date_booking
 
@@ -11,3 +11,5 @@ if a==1:
     date_booking.dt_chk()
 else:
     print('Sorry, something went wrong try again...')
+
+print('Thank you...leave a comment.')

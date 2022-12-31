@@ -6,6 +6,7 @@ def stol(dp1,st1): #convert string reprentation of a list to actual list
     a = ast.literal_eval(a)
     return(a)
 
+#insert 'Nan' to spaces inside dictionary 'dx'
 def nan(dx):
     import date_booking
     import fe_tr2
@@ -17,7 +18,7 @@ def nan(dx):
         rv=f - b
         for y in range(rv-1):
             dx[x].append('NaN')
-    print(dx)
+    #print(dx)
     return(dx)
 
 

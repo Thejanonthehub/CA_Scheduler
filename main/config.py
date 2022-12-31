@@ -21,3 +21,4 @@ start_year=dic_1['no_CA_t']
 max_ca=dic_1['no_CA_t']
 p_l=dic_1['p_l']
 a=p_l.split(sep=',')
+fl1=dic_1['fl1']
